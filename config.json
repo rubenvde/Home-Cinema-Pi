@@ -1,0 +1,7 @@
+{
+  "directories": {
+    "font": "/fonts",
+    "image": "/images"
+  },
+  "basicfont": "regular.ttf"
+}
