@@ -7,6 +7,7 @@ from kivy.uix.scrollview import ScrollView
 from helpers import FontLoader
 from base.ImageButton import ImageButton
 from helpers import ImageLoader
+from debug import Debugger
 
 
 class AppMenu(BasicScreen):
@@ -17,13 +18,18 @@ class AppMenu(BasicScreen):
         header = Label(text="Apps", size=(150, 80), size_hint=(None, None), font_size='50sp', font_name=FontLoader.get_font('bold'), color=Color(rgb=self.color).rgba)
         anchor_header.add_widget(header)
         self.add_widget(anchor_header)
-
         scroll_layout = GridLayout(cols=3, spacing=40, size_hint_y=None)
         scroll_layout.bind(minimum_height=scroll_layout.setter('height'))
-        for i in range(100):
+
+        netflixurl = ImageLoader.get_image("netflix.png")
+        netflixbtn = ImageButton(size_hint_y=None, height=100, source=netflixurl, location="Netflix")
+        scroll_layout.add_widget(netflixbtn)
+
+        for i in range(99):
             imgurl = ImageLoader.get_image("app.png")
-            imagebtn = ImageButton(size_hint_y=None, height=80, source=imgurl)
+            imagebtn = ImageButton(size_hint_y=None, height=100, source=imgurl)
             scroll_layout.add_widget(imagebtn)
         scroll = ScrollView(size_hint=(1, None), size=(self.width, self.height - 90))
         scroll.add_widget(scroll_layout)
         self.add_widget(scroll)
+        Debugger.front_print("AppMenu app loaded")

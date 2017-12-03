@@ -11,7 +11,7 @@ class DisplayTime(AnchorLayout):
     def __init__(self, **kwargs):
         super(DisplayTime, self).__init__()
         self.current_minute = -1
-        self.color = BasicFunctions.hex_to_rgb("#FFFFFF")
+        self.color = BasicFunctions.hex_to_rgb("#000000")
         for key, value in kwargs.items():
             if key == 'color':
                 self.color = BasicFunctions.hex_to_rgb(value)

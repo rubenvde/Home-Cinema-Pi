@@ -22,4 +22,4 @@ class BasicScreen(Screen):
             Color(rgb=self.backgroundcolor)  # rgba might be better
             Rectangle(size=self.size, pos=self.pos)
 
-        self.add_widget(DisplayTime())
+        self.add_widget(DisplayTime(color=kwargs['color']))
